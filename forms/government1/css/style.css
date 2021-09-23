@@ -1,0 +1,55 @@
+.container{
+    box-shadow: 0px 1px 10px gray;
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;    
+}
+#Header{
+    box-shadow: 0px 2px 10px grey;
+    background: white; 
+    margin: 0px -15px;
+    padding: 1.2rem !important;
+}
+#time{
+    background: #d9edf7;
+    color: #31708f;
+    font-size: 0.8rem;
+}
+.dataFields{
+    background: #fff;
+}
+.field{
+    background: #f0f0f0;
+}
+#accordian .fa{
+    color: black;
+    float: right;
+}
+.card,.card-header{
+    border: none;
+    border-radius: 0px;
+    background: white;
+}
+.form-control{
+    border-radius: 0px;
+}
+button{
+    border: 1px solid #ccc !important;
+}
+button:hover{
+    background: #ccc !important;
+}
+
+
+#TDAN{
+    color: #E55957;
+}
+
+.error{
+    color: #E55957;
+    display: none;
+}
+#myCanvas{
+    width: 10rem;
+    height: 5rem;
+}

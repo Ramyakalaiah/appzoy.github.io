@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../font-awesome/css/all.css    ">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand bg-light navbar-light">
+        <a class="navbar-brand"><img src="img/sbilogo.png" height="100px" width="100px" alt="" class="img-fluid"></a>
+        <a class="navbar-brand ml-auto"><img src="img/sbionlinelogo.png" height="80px" width="80px" alt="" class="img-fluid"></a>
+    </nav>
+
+    <section class="py-3 bg-primary"></section>
+
+    <section class="container-fluid">
+        <div id="header" class="row pt-3">
+            <div class="col-md d-flex">
+                <p class="ml-3 font-weight-bold header">Login to Online SBI</p>
+                <p class="ml-auto mr-3 header">Welcome to Internet Banking</p>
+            </div>
+        </div>
+        <div class="row bg-light mx-5">
+            <div class="col-md-7">
+                <p><span style="color: red;">(CARE: </span>Username and Password are case sensitive.)</p>
+            </div>
+        </div>
+        <div class="row bg-light mx-5">
+            <div class="col-md-7">
+                <div id="selectbankrow" class="row">
+                    <div class="col-md-6 py-1 text-white d-flex justify-content-center align-items-center" style="background: #2980b9;">
+                        <i class="fa fa-hand-point-right" style="color: #f1c40f"></i><span class="ml-2">Please Select the customer segment</span> 
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center align-items-center">
+                        <div class="form-check">
+                            <label for="" class="form-check-label">
+                                <input name="radio" type="radio" class="form-check-input" checked><span style="color: #2980b9;">PERSONAL</span> BANKING
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center align-items-center">
+                        <div class="form-check">
+                            <label for="" class="form-check-label">
+                                <input name="radio" type="radio" class="form-check-input"><span style="color: #2980b9;">CORPORATE</span> BANKING
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-5 bg-light py-3">
+            <div id="formcol" class="col-md">
+                <form action="" name="myForm" onsubmit="return validate()">
+                    <div class="form-group">
+                        <label for="" class="form-label" style="color: #2980b9;">Username*</label>
+                        <input name="username" type="text" class="form-control">
+                        <span id="usernameError" style="color: red;"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="form-label" style="color: #2980b9;">Password*</label>
+                        <input name="password" type="text" class="form-control">
+                        <span id="passwordError" style="color: red;"></span>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn mr-1 px-4">Login</button>
+                        <button type="reset" class="btn ml-1 px-4">Reset</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md">
+                <a href="#" class="d-block my-4 px-5">New User? Register here</a>
+                <a href="#" class="d-block my-4 px-5">Forgot Login Password</a>
+                <a href="#" class="d-block my-4 px-5">Forgot username</a>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+        <div id="footer" class="row py-3 d-flex align-items-center">
+            <div class="col-md-7">
+                <ul class="d-flex justify-content-end m-0">
+                    <li>FAQ |</li>
+                    <li>About Phishing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="instructions" class="container py-3 my-2">
+        <div class="row">
+            <div class="col-md">
+                <i class="fa fa-check"></i> Mandatory fields are marked with an asterisk(*).
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <i class="fa fa-check"></i> Do not provide your username and password anywhere other than this page.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <i class="fa fa-check"></i> Your username and password are highly confidential. Never part with them. SBI will never ask for this information.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <i class="fa fa-check"></i> Please do not call Contact Centre or try to raise CMS complaint on the day of transaction.
+            </div>
+        </div>
+    </section>
+
+    <script src="../bootstrap/jquery.js"></script>
+    <script src="../bootstrap/bootstrap.js"></script>
+</body>
+</html>

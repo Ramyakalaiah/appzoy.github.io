@@ -1,0 +1,79 @@
+body{
+    width: 50rem;
+    margin: auto;
+    background-color: #F0F8FF;
+}
+.container{
+    font-size: 0.6em;
+    background-color: #eff3fb;
+    border: 0.1px solid black;
+}
+.row{
+    border-bottom: 0.1px solid black;
+}
+.form-group{
+    margin: 0;
+}
+.form-control{
+    border-radius: 0;
+    border: 0.5px solid black;
+    padding: 0 !important;
+    margin: 0.1rem;
+    height: calc(1rem + 0.25rem) !important;
+    font-size: 1.5em; 
+}
+.form-label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    margin-bottom: 0 !important;
+}
+.form-check{
+    margin: 0 !important;
+    font-family: verdana;
+    font-weight: 600;
+}
+.btn{
+    font-size: 0.7rem;
+    border-radius: 0;
+    margin: 3px;
+    padding: 0px 2em !important;
+}
+.error{
+    color: red;
+}
+#taxAmount{
+    direction: rtl;
+}
+#interestAmount{
+    direction: rtl;
+}
+#penaltyAmount{
+    direction: rtl;
+}
+#otherAmount{
+    direction: rtl;
+}
+#totalAmount{
+    direction: rtl;
+}
+#monthRow{
+    display: none;
+}
+#demandRow{
+    display: none;
+}
+h6{
+    font-family: 'Roboto', sans-serif;
+}
+#RC{
+    display: none;
+}
+#TIN{
+    display: none;
+}
+#GST{
+    display: none;
+}
+#GSTIN{
+    display: none;
+}

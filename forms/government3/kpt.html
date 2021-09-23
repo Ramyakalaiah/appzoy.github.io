@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:900&display=swap" rel="stylesheet">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header class="py-1 mt-1" style="background: linear-gradient(0deg,#7A0B23,#960D2B)">
+        <h6 class="text-center text-white">...: e-Payment for Professional Tax :...</h6>
+    </header>
+    <div class="container mt-1">
+        <form action="../government/index.html" name="myForm" onsubmit="return validate()">
+            <div class="row">
+                <div class="col-md-2 pl-1">
+                    <label for="dealerType" class="form-label">Dealer Type<span style="color: red;">*</span>:</label>
+                </div>
+                <div class="col-md-10 d-flex">
+                    <div class="form-group">
+                        <label for="dealerType" class="form-check d-flex align-items-center"><input name="r1" id="selfEmployed" type="radio" class="form-check-control" onclick="rv1()" checked> Self-Employed Professional</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="dealerType" class="form-check d-flex align-items-center"><input name="r1" id="registeredEmployer" type="radio" class="form-check-control" onclick="rv2()"> Registered Employer</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="dealerType" class="form-check d-flex align-items-center"><input name="r1" id="dealerVAT" type="radio" class="form-check-control" onclick="rv3()"> Dealer under VAT</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="dealerType" class="form-check d-flex align-items-center"><input name="r1" id="dealerGSTIN" type="radio" class="form-check-control" onclick="rv4()"> Dealer under GSTIN</label>
+                    </div>
+                </div>
+            </div>
+            <div id="EC" class="row align-items-center">
+                <div class="col-md-2 pl-1">
+                    <label for="dealerType" class="form-label" style="font-size: 0.8rem;">Enter EC No<span style="color: red;">*</span>:</label>
+                </div>
+                <div class="col-md-10 d-flex">
+                    <div class="form-group d-flex">
+                        <input name="ECno" type="text" class="form-control" onfocus="enableInput()"> 
+                        <span id="ECnoError" class="error"></span>
+                    </div>
+                </div>
+            </div> 
+            <div id="RC" class="row align-items-center">
+                <div class="col-md-2 pl-1">
+                    <label for="dealerType" class="form-label" style="font-size: 0.8rem;">Enter RC No<span style="color: red;">*</span>:</label>
+                </div>
+                <div class="col-md-10 d-flex">
+                    <div class="form-group d-flex">
+                        <input name="RCno" type="text" class="form-control" onfocus="enableInput()"> 
+                        <span id="RCnoError" class="error"></span>
+                    </div>
+                </div>
+            </div> 
+            <div id="TIN" class="row align-items-center">
+                <div class="col-md-2 pl-1">
+                    <label for="dealerType" class="form-label" style="font-size: 0.8rem;">Enter TIN No<span style="color: red;">*</span>:</label>
+                </div>
+                <div class="col-md-10 d-flex">
+                    <div class="form-group d-flex">
+                        <input name="TINno" type="text" class="form-control" onfocus="enableInput()"> 
+                        <span id="TINnoError" class="error"></span>
+                    </div>
+                </div>
+            </div> 
+            <div id="GST" class="row align-items-center">
+                <div class="col-md-2 pl-1">
+                    <label for="dealerType" class="form-label" style="font-size: 0.8rem;">Enter TIN No<span style="color: red;">*</span>:</label>
+                </div>
+                <div class="col-md-10 d-flex">
+                    <div class="form-group d-flex">
+                        <input name="GSTTINno" type="text" class="form-control" value="2900" disabled> 
+                        <span id="GSTTINnoError" class="error"></span>
+                    </div>
+                </div>
+            </div>  
+            <div id="GSTIN" class="row align-items-center">
+                <div class="col-md-2 pl-1">
+                    <label for="dealerType" class="form-label" style="font-size: 0.8rem;">Enter GSTIN<span style="color: red;">*</span>:</label>
+                </div>
+                <div class="col-md-10 d-flex">
+                    <div class="form-group d-flex">
+                        <input name="GSTINno" type="text" class="form-control" onfocus="enableInput()"> 
+                        <span id="GSTINnoError" class="error"></span>
+                    </div>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-md-2 pl-1 d-flex align-items-center">
+                    <label for="dealerType" class="form-label">Name<span style="color: red;">*</span>:</label>
+                </div>
+                <div class="col-md-10 d-flex">
+                    <div class="form-group d-flex">
+                        <input id="nameInput" name="Name" type="text" class="form-control my-2" style="width: 300px;" disabled>
+                        <span id="NameError" class="error"></span>
+                    </div>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-md-2 pl-1 d-flex align-items-center">
+                    <label for="dealerType" class="form-label">Office<span style="color: red;">*</span>:</label>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="form-group d-flex">
+                        <input id="officeInput" name="Office" type="text" class="form-control" disabled>
+                        <span id="OfficeError" class="error"></span>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>  
+            <div class="row">
+                <div class="col-md-2 pl-1 d-flex align-items-center">
+                    <label for="dealerType" class="form-label">Period<span style="color: red;">*</span>:</label>
+                </div>
+                <div class="col-md-10 d-flex">
+                    <div class="form-group">
+                        <label for="dealerType" class="form-check d-flex align-items-center"><input name="r2" id="yearly" type="radio" class="form-check-control" onclick="rv5()" checked> Yearly</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="dealerType" class="form-check d-flex align-items-center"><input name="r2" id="monthly" type="radio" class="form-check-control" onclick="rv6()" disabled> Monthly</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="dealerType" class="form-check d-flex align-items-center"><input name="r2" id="demand" type="radio" class="form-check-control" onclick="rv7()"> On Dept. Demand</label>
+                    </div>
+                </div>
+            </div>
+            <div id="yearRow" class="row align-items-center">
+                <div class="col-md-3 pl-1 pr-0">
+                    <label for="dealerType" class="form-label">Tax Period -Year (yyyy)<span style="color: red;">*</span></label>
+                </div>
+                <div class="col-md-4 pl-0">
+                    <div class="form-group">
+                        <select name="year" class="form-control">
+                            <option value="">Select</option>
+                            <option value="1">2011-2012</option>
+                            <option value="2">2012-2013</option>
+                            <option value="3">2013-2014</option>
+                            <option value="4">2014-2015</option>
+                            <option value="5">2015-2016</option>
+                            <option value="6">2016-2017</option>
+                            <option value="7">2017-2018</option>
+                            <option value="8">2018-2019</option>
+                            <option value="9">2019-2020</option>
+                        </select>
+                        <span id="yearError" class="error"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="monthRow" class="row">
+                <div class="col-md-5 pl-1 pr-0">
+                    <label for="dealerType" class="form-label">Tax Period -Year (yyyy)<span style="color: red;">*</span></label>
+                    <div class="form-group">
+                        <input id="monthYear" type="text" class="form-control">
+                        <span id="monthYearError" class="error"></span>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <label class="form-label">Month<span style="color: red;">*</span></label>
+                    <div class="form-group">
+                        <select id="month" class="form-control">
+                            <option value="">Select</option>
+                            <option value="1">Jan</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Apr</option>
+                            <option value="5">May</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Aug</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
+                        </select>
+                        <span id="monthError" class="error"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="demandRow" class="row">
+                <div class="col-md pl-1 d-flex flex-column">
+                    <label for="" class="form-label">If on Dept. Demand enter</label> 
+                    <div class="d-flex">
+                        <div class="form-group d-flex">
+                            <label for="" class="form-label">Order No.:<span style="color: red;">*</span></label>
+                            <input id="orderNo" type="text" class="form-control">
+                            <span id="orderNoError" class="error"></span>
+                        </div>
+                        <div class="form-group d-flex">
+                            <label for="" class="form-label">Order Date:<span style="color: red;">*</span></label>
+                            <input id="orderDate" type="text" class="form-control">
+                            <span id="orderDateError" class="error"></span>
+                        </div>
+                        <div class="form-group d-flex">
+                            <label for="" class="form-label">Designation:<span style="color: red;">*</span></label>
+                            <input id="designation" type="text" class="form-control">
+                            <span id="designationError" class="error"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md pl-1">
+                    <label for="" class="form-label">Tax Details</label>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-md-2 pl-1 d-flex align-items-center">
+                    <label for="dealerType" class="form-label">Tax Amount<span style="color: red;">*</span></label>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="form-group">
+                        <input id="taxAmount" type="text" class="form-control" value="0">
+                        <span id="taxAmountError" class="error"></span>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>   
+            <div class="row">
+                <div class="col-md-2 pl-1 d-flex align-items-center">
+                    <label for="dealerType" class="form-label">Interest Amount<span style="color: red;">*</span></label>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="form-group">
+                        <input id="interestAmount" type="text" class="form-control" value="0">
+                        <span id="interestAmountError" class="error"></span>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>   
+            <div class="row">
+                <div class="col-md-2 pl-1 d-flex align-items-center">
+                    <label for="dealerType" class="form-label">Penalty Amount<span style="color: red;">*</span></label>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="form-group">
+                        <input id="penaltyAmount" type="text" class="form-control" value="0">
+                        <span id="penaltyAmountError" class="error"></span>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>   
+            <div class="row">
+                <div class="col-md-2 pl-1 d-flex align-items-center">
+                    <label for="dealerType" class="form-label">Other Amount<span style="color: red;">*</span>   </label>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="form-group">
+                        <input id="otherAmount" type="text" class="form-control" value="0">
+                        <span id="otherAmountError" class="error"></span>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>   
+            <div class="row">
+                <div class="col-md-2 pl-1 d-flex align-items-center">
+                    <label for="dealerType" class="form-label">Total Amount</label>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="form-group">
+                        <input id="totalAmount" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>   
+            <div class="row d-flex align-items-center">
+                <div class="col-md-2 pl-1">
+                    <label for="dealerType" class="form-label">E-Payment through</label>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="form-group">
+                        <select class="form-control">                                                       
+                            <option value="Axis Bank" selected>Axis Bank</option>                                        
+                            <option value="Bank of Baroda" >Bank of Baroda</option>                                        
+                            <option value="Bank of India" >Bank of India</option>                                        
+                            <option value="Bank of Maharashtra" >Bank of Maharashtra</option>                                        
+                            <option value="Canara Bank" >Canara Bank</option>                                        
+                            <option value="Central Bank of India" >Central Bank of India</option>                                        
+                            <option value="Corporation Bank" >Corporation Bank</option>                                        
+                            <option value="Dena Bank" >Dena Bank</option>                                        
+                            <option value="HDFC Bank" >HDFC Bank</option>                                        
+                            <option value="ICICI Bank" >ICICI Bank</option>                                        
+                            <option value="IDBI Bank" >IDBI Bank</option>                                        
+                            <option value="Indian Bank" >Indian Bank</option>                                        
+                            <option value="Indian Overseas Bank" >Indian Overseas Bank</option>                                        
+                            <option value="Punjab National Bank" >Punjab National Bank</option>                                        
+                            <option value="State Bank of India" >State Bank of Hyderabad</option>                                          
+                            <option value="State Bank of India" >State Bank of India</option>                                          
+                            <option value="State Bank of India" >State Bank of Mysore</option>                                          
+                            <option value="State Bank of India" >State Bank of Travancore</option>                                        
+                            <option value="Syndicate Bank" >Syndicate Bank</option>                                                                             
+                            <option value="Union Bank of India" >Union Bank of India</option>                                        
+                            <option value="Vijaya Bank" >Vijaya Bank</option>
+                        </select> 
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <div class="row d-flex align-items-center" style="border:none;">
+                        <div class="col-md-6">
+                            <label for="dealerType" class="form-label">Mobile no.(For SMS)</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-4 d-flex justify-content-end p-0">
+                    <input type="submit" class="btn btn-primary text-center" value="Next">
+                </div>
+                <div class="col-md-6 d-flex p-0">
+                    <input type="button" class="btn btn-primary text-center" value="Exit">
+                </div>
+            </div>  
+        </form>
+    </div>
+
+    <script src="../bootstrap/jquery.js"></script>
+    <script src="../bootstrap/bootstrap.js"></script>
+</body>
+</html>

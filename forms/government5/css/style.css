@@ -1,0 +1,45 @@
+body{
+    background: #f8f9fa;
+}
+#header{
+    background-color: #EFF8FF;
+}
+ul{
+    list-style-type: none;
+    text-decoration: none;
+}
+li{
+    cursor: pointer;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+}
+.footer{
+    background: #60a3bc;
+}
+.header{
+    color: #2980b9;
+}
+#selectbankrow{
+    border: 1px solid #2980b9;
+}
+#formcol{
+    border-right: 0.5px solid #aaa;
+}
+.btn{
+    background: #2980b9;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 50px;
+    box-shadow: 0 1px 1px #aaaaaa;
+}
+.btn:hover{
+    color: #fff;
+    background: #115b8d;
+}
+#footer{
+    background: #EFF8FF;
+    color: #2980b9;
+}
+#instructions{
+    border: 1px solid #60a3bc;
+}

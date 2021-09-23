@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../font-awesome/css/all.css">
+</head>
+<body onload="start()">
+
+    <!------------ HEADER ------------->
+
+    <div class="container mt-2">
+            <h5 id="Header">CHALLAN NO./ITNS 281</h5>
+
+        <!------------------- TIME --------------------->
+
+        <div class="row p-3 mr-auto">
+            <div class="col p-3" id="time">
+                <i class="fa fa-clock"></i> <span class="font-weight-bold">Time remaining:</span><span id="timer"></span>
+            </div>
+        </div>
+
+        <!------------------- HEADING -------------------->
+
+        <script type="text/javascript" src="js/script.js"></script>
+
+        <div class="row px-3 py-2 d-flex flex-column-reverse flex-md-row">
+            <div class="col-md-8 mb-3 field">
+                <h3 class="pb-2">Please confirm your information before proceeding</h3>
+                <div class="ticker-container my-2">
+                    <div class="ticker-text">
+                    Taxpayers are requested to ensure that Assessment Year, TAN, Type of Payment etc. entered by them are correct before proceeding.
+                    </div>
+                </div>
+
+                <!--------------------- FORM ---------------------->
+
+                <form action="../government4/challan.html?" onsubmit="return validate()" name="myForm">
+                    <div class="row p-4 mb-3 dataFields">
+                        <div class="col-md-4 text-md-right">
+                            Tax Applicable
+                        </div>
+                        <div class="col-md-8 font-weight-bold">
+                            0020
+                        </div>
+                    </div>
+                    <div class="row  p-4 mb-3 dataFields">
+                        <div class="col-md-4 text-md-right pb-3">
+                            Type of Payment
+                        </div>
+                        <div class="col-md-8 font-weight-bold pb-3">
+                            200
+                        </div>
+                        <div class="col-md-4 text-md-right">
+                            Nature of Payment
+                        </div>
+                        <div class="col-md-8 font-weight-bold">
+                            4EE 
+                        </div>
+                    </div>
+                    <div class="row p-4 mb-3 dataFields">
+                        <div class="col-md-4 text-md-right pb-3">
+                            Mode Of Payment 
+                        </div>
+                        <div class="col-md-8 font-weight-bold pb-3">
+                            Net-Banking
+                        </div>
+                        <div class="col-md-4 text-md-right">
+                            Bank Name
+                        </div>
+                        <div class="col-md-8 font-weight-bold">
+                            Bank of Maharashtra
+                        </div>
+                    </div>
+                    <div class="row p-4 mb-3 dataFields">
+                        <div class="col">
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right pb-3">
+                                    Tax Deduction Account No
+                                </div>
+                                <div class="col-md-8 font-weight-bold pb-3">
+                                    BLRA19111B
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right pb-3">
+                                    Full Name (Masked)
+                                </div>
+                                <div class="col-md-8 font-weight-bold pb-3">
+                                    ANP XXXXELS INDIA PRIVATE LIMITED
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 text-md-right">
+                                    Assessment Year
+                                </div>
+                                <div class="col-md-8 font-weight-bold">
+                                    2006-07
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-4 mb-3 dataFields">
+                        <div class="col">
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right pb-3">
+                                    Flat/Door/Block No.
+                                </div>
+                                <div class="col-md-8 pb-3">
+
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right pb-3">
+                                    Premises/Building/Village
+                                </div>
+                                <div class="col-md-8 pb-3">
+
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right pb-3">
+                                    Road/Street/Lane
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right pb-3">
+                                    Area/Locality
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right pb-3">
+                                    City/District
+                                </div>
+                                <div class="col-md-8 font-weight-bold pb-3">
+                                    fvnb
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right pb-3">
+                                    State
+                                </div>
+                                <div class="col-md-8 font-weight-bold pb-3">
+                                    JHARKHAND
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right pb-3">
+                                    Pin Code
+                                </div>
+                                <div class="col-md-8 font-weight-bold pb-3">
+                                    123665  
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right pb-3">
+                                    Email ID
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right pb-3">
+                                    Mobile No.
+                                </div>
+                                <div class="col-md-8">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3 dataFields">
+                        <div class="col-md">
+                            <div class="card">
+                                <div class="card-header text-center" id="heading">
+                                    <h6 class="p-2 font-weight-bold">
+                                        Consent is provided to NSDL e-Gov
+                                    </h6>
+                                </div>
+                                <div class="card-body text-justified font-weight-bold font-italic">
+                                    By submitting data to us and/or using our web site <span style="color: #3838bc;">www.tin-nsdl.com</span>, 
+                                    you give your consent that all personal data/information that you submit 
+                                    to avail tax related services from NSDL e-Governance Infrastructure Limited 
+                                    may be received, stored, processed, transmitted and or made available for 
+                                    view/use as mandated by law or otherwise, shall be dealt with by us in the 
+                                    manner and for the purposes specified/as described in the <span style="color: #3838bc;">Privacy Policy</span> or 
+                                    as mandated by law.
+                                    <div class="checkbox mt-4">
+                                        <label><input type="checkbox" value="" id="check1"> I agree</label>
+                                        <p id="agreeError" class="error font-weight-normal"></p>       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-4 dataFields">
+                        <div class="col" style="color: #E55957;">                            
+                            <div class="text-justified">                            
+                                <p class="text-justified">
+                                    The name of the taxpayer is as per the ITD TAN / PAN Master. You are required to verify the name 
+                                    before making payment. In case any discrepancy is observed, please confirm the TAN / PAN entered 
+                                    by you. Any change required in the name displayed as per the TAN / PAN Master can be updated by 
+                                    filling up the relevant change request forms for TAN / PAN.
+                                </p>
+                                <p>
+                                    If the name is correct, then click on "Submit to the Bank"
+                                </p>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-outline-secondary text-dark">Edit</button>
+                                <button class="btn btn-warning" type="submit">Submit to the Bank</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div id="accordian">
+                    <div class="card">
+                        <div class="card-header p-3" id="heading">
+                            <h6 class="mb-0">
+                                SPECIAL INSTRUCTIONS
+                                <a href="#collapseOne" data-toggle="collapse" data-parent="#accordian"><i class="fa fa-angle-down"></i></a>
+                            </h6>
+                        </div>
+                        <div id="collapseOne" class="collapse">
+                            <div class="card-body">
+                                Note: Provision to enter Tax amount (i.e. Basic Tax, Interest, Fee, etc.) is given in the Bank's site
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../bootstrap/jquery.js"></script>
+    <script src="../bootstrap/bootstrap.js"></script>
+    
+</body>
+</html>

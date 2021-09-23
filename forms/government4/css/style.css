@@ -1,0 +1,35 @@
+.bg-lightblue{
+    background-color: #EFF8FF;
+}
+.card{
+    border-radius: 0;
+}
+.btn{
+    background: #cccccc;
+    border: 1px solid #bbbbbb;
+    color: black;
+}
+.btn:hover{
+    background: #bbbbbb;
+    color: #333333;
+    border: 1px solid #bbbbbb;
+}
+#note{
+    background-color: #efefef;
+    border: 1px solid #ddd;
+}
+.container{
+    padding: 0;
+}
+ul{
+    list-style-type: none;
+    text-decoration: none;
+}
+li{
+    cursor: pointer;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+}
+.footer{
+    background: #60a3bc;
+}

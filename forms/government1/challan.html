@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../font-awesome/css/all.css">
+</head>
+<body onload="start()">
+
+    <!------------ HEADER ------------->
+
+    <div class="container mt-2">
+            <h5 id="Header">CHALLAN NO./ITNS 281</h5>
+
+        <!------------------- TIME --------------------->
+
+        <div class="row p-3 mr-auto">
+            <div class="col p-3" id="time">
+                <i class="fa fa-clock"></i> <span class="font-weight-bold">Time remaining:</span><span id="timer"></span>
+            </div>
+        </div>
+
+        <!------------------- FORM -------------------->
+
+        <script type="text/javascript" src="js/script.js"></script>
+
+        <div class="row px-3 py-2 d-flex flex-column-reverse flex-md-row">
+            <div class="col-md-8 mb-3 field">
+                <form action="../government2/challan.html" onsubmit="return validate()" name="myForm">
+                    <div class="row p-4 mb-3 dataFields">
+                        <div class="col-md-4 text-md-right">
+                            <label for="" class="form-label" id="TaxApplicable">
+                                Tax Applicable<span style="color: #E55957;">*</span><br> 
+                                (Tax Deducted/Collected At Source From)
+                            </label>
+                        </div>
+                        <div class="col-md-8 d-flex flex-column">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="radio1" id="radio1" value="option1">
+                                <label class="form-check-label" for="radio1">
+                                    (0020) Company Deductees
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radio1" id="radio1" value="option2">
+                                <label class="form-check-label" for="radio2">
+                                    (0021) Non-Company Deductees
+                                </label>
+                            </div>
+                            <p id="taxApplicableError" class="error"></p>
+                        </div>
+                    </div>
+                    <div class="row  p-4 mb-3 dataFields">
+                        <div class="col-md-4 text-md-right pb-3">
+                            <label for="" class="form-label" id="TypeOfPayment">
+                                Type of Payment<span style="color: #E55957;">*</span> 
+                            </label>
+                        </div>
+                        <div class="col-md-8 d-flex flex-column pb-3">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="radio2" id="" value="option1">
+                                <label class="form-check-label" for="radio2">
+                                    (200) TDS/TCS Payable by Taxpayer
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radio2" id="" value="option2">
+                                <label class="form-check-label" for="radio2">
+                                    (400) TDS/TCS Regular Assessment
+                                </label>
+                            </div>
+                            <p id="typeOfPaymentError" class="error"></p>
+                        </div>
+                        <div class="col-md-4 text-md-right">
+                            <label for="" class="form-label" id="NatureOfPayment">
+                                Nature of Payment<span style="color: #E55957;">*</span> 
+                            </label>
+                        </div>
+                        <div class="col-md-8">
+                            <select class="form-control" name="natureOfPayment">
+                                    <option value="" selected>Nature of Payment</option>														
+                                    <option  value="193 - Interest on Securities">193 - Interest on Securities</option>	                                
+                                    <option  value="194 - Dividend">194 - Dividend</option>	                                
+                                    <option  value="195 - Other sums payable to a non-resident">195 - Other sums payable to a non-resident</option>	                                
+                                    <option  value="4BA - Certain income from units of a business trust">4BA - Certain income from units of a business trust</option>	                                
+                                    <option  value="4BB - Winning from Horse race">4BB - Winning from Horse race</option>	                                
+                                    <option  value="4DA - Payment in respect of life insurance policy">4DA - Payment in respect of life insurance policy</option>	                                
+                                    <option  value="4EE - Payments in respect of Deposits under National Saving Schemes">4EE - Payments in respect of Deposits under National Saving Schemes</option>	                                
+                                    <option  value="4LA - Payment of Compensation on Acquisition of Certain Immovable property">4LA - Payment of Compensation on Acquisition of Certain Immovable property</option>	                                
+                                    <option  value="4LB - Income by way of interest from infrastructure debt fund payable to a non-resident">4LB - Income by way of interest from infrastructure debt fund payable to a non-resident</option>	                                
+                                    <option  value="4LC - Income by way of interest from specified Company payable to a non-resident">4LC - Income by way of interest from specified Company payable to a non-resident</option>	                                
+                                    <option  value="4LD - Interest on Rupee denominated bond of Company or Government Securities">4LD - Interest on Rupee denominated bond of Company or Government Securities</option>	                                
+                                    <option  value="6CA - Alcoholic liquor for human consumption">6CA - Alcoholic liquor for human consumption</option>	                                
+                                    <option  value="6CB - Timber obtained under forest lease">6CB - Timber obtained under forest lease</option>	                                
+                                    <option  value="6CC - Timber obtained other than forest lease">6CC - Timber obtained other than forest lease</option>	                                
+                                    <option  value="6CD - Any other forest produce not being timber or tendu leaves">6CD - Any other forest produce not being timber or tendu leaves</option>	                                
+                                    <option  value="6CE - Scrap">6CE - Scrap</option>	                                
+                                    <option  value="6CF - Parking Lot">6CF - Parking Lot</option>	                                
+                                    <option  value="6CG - Toll Plaza">6CG - Toll Plaza</option>	                                
+                                    <option  value="6CH - Mining and Quarrying">6CH - Mining and Quarrying</option>	                                
+                                    <option  value="6CI - Tendu Leaves">6CI - Tendu Leaves</option>	                                
+                                    <option  value="6CJ - Minerals">6CJ - Minerals</option>	                                
+                                    <option  value="6CK - Bullion and Jewellery">6CK - Bullion and Jewellery</option>	                                
+                                    <option  value="92A - Payment to Govt. Employees other than Union Govt. employees">92A - Payment to Govt. Employees other than Union Govt. employees</option>	                                
+                                    <option  value="92B - Payment of Employees other than Govt. Employees">92B - Payment of Employees other than Govt. Employees</option>	                                
+                                    <option  value="94A - Interest other than Interest on Securities">94A - Interest other than Interest on Securities</option>                                
+                                    <option  value="94B - Winning from lotteries and crossword puzzles">94B - Winning from lotteries and crossword puzzles</option>	                                
+                                    <option  value="94C - Payment of contractors and sub-contractors">94C - Payment of contractors and sub-contractors</option>	                                
+                                    <option  value="94D - Insurance commission">94D - Insurance commission</option>	                                
+                                    <option  value="94E - Payments to non-resident Sportsmen/Sport Associations">94E - Payments to non-resident Sportsmen/Sport Associations</option>	                                
+                                    <option  value="94F - Payments on account of Re-purchase of Units by Mutual Funds of UTI">94F - Payments on account of Re-purchase of Units by Mutual Funds of UTI</option>	                                
+                                    <option  value="94G - Commission,prize etc. on sale of Lottery tickets">94G - Commission,prize etc. on sale of Lottery tickets</option>	                                
+                                    <option  value="94H - Commission or Brokerage">94H - Commission or Brokerage</option>	                                
+                                    <option  value="94I - Rent">94I - Rent</option>	                                
+                                    <option  value="94J - Fees for Professional or Technical Services">94J - Fees for Professional or Technical Services</option>	                                
+                                    <option  value="94K - Income Payable to a resident assessee in respect of units of a specified Mutual Fund or of the Units of the UTI">94K - Income Payable to a resident assessee in respect of units of a specified Mutual Fund or of the Units of the UTI</option>	                                
+                                    <option  value="96A - Income in respect of Units of non-residents">96A - Income in respect of Units of non-residents</option>	                                
+                                    <option  value="96B - Payments in respect of Units to an Offshore Fund">96B - Payments in respect of Units to an Offshore Fund</option>	                                
+                                    <option  value="96C - Income from foreign currency Bonds or Shares of Indian Company payable to a non-resident">96C - Income from foreign currency Bonds or Shares of Indian Company payable to a non-resident</option>	                                
+                                    <option  value="96D - Income of Foreign Institutional investors from securities">96D - Income of Foreign Institutional investors from securities</option>	                                
+                                    <option  value="2AA - Payment of accumulated balance due to an employee">2AA - Payment of accumulated balance due to an employee</option>	                                
+                                    <option  value="LBB - Income in respect of units of investment fund">LBB - Income in respect of units of investment fund</option>	                                
+                                    <option  value="6CL - TCS on sale of Motor vehicle">6CL - TCS on sale of Motor vehicle</option>	                                
+                                    <option  value="6CM - TCS on sale in cash of any goods (other than bullion/jewellery)">6CM - TCS on sale in cash of any goods (other than bullion/jewellery)</option>	                                
+                                    <option  value="6CN - TCS on providing of any services (other than Ch-XVII-B)">6CN - TCS on providing of any services (other than Ch-XVII-B)</option>	                                
+                                    <option  value="LBC - Income in respect of investment in securitization trust">LBC - Income in respect of investment in securitization trust</option>	                                
+                                    <option  value="4IC - Payment under specified agreement">4IC - Payment under specified agreement</option>
+                            </select>
+                            <p id="natureOfPaymentError" class="error"></p>
+                        </div>
+                    </div>
+                    <div class="row p-4 mb-3 dataFields">
+                        <div class="col-md-4 text-md-right">
+                            <label for="" class="form-label" id="NetBankName">
+                                Mode Of Payment <span style="color: #E55957;">*</span> 
+                            </label>
+                        </div>
+                        <div class="col-md-8 d-flex flex-column">
+                            <div class="row mb-2 d-flex align-items-baseline">
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio3" id="" value="option1" onclick="enable1()" checked>
+                                        <label class="form-check-label" for="radio3">
+                                            Net-Banking
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <select name="netBankName"  size="1" id="NetBank_Name_c" class="form-control">
+                                        <option value="" selected> Bank Name</option>                                            
+                                        <option value="Allahabad Bank|https://www.allbankonline.in/servlet/ibs.servlets.IBSLoginServlet" >Allahabad Bank</option>                                        
+                                        <option value="Andhra Bank|https://WWW.ONLINEANDHRABANK.NET.IN/BankAwayRetail/sgonHttpHandler.aspx?Action.ShoppingMall.Login.Init=Y&BankId=011&USER_LANG_ID=001&AppType=corporate&UserType=1&CG=N&MD=P&PID=000000000036&ITC=10000001&PRN=10000002&AMT=0&CRN=INR&RU=https://onlineservices.tin.nsdl.com/etaxnew/tdsnontds.jsp" >Andhra Bank</option>                                        
+                                        <option value="Axis Bank|https://www.axisbiconnect.co.in/tax/tax.asp" >Axis Bank</option>                                        
+                                        <option value="Bank of Baroda|https://www.bobibanking.com/BankAwayRetail/sgonHttpHandler.aspx?Action.ShoppingMall.Login.Init3=Y?&BankId=012&PID=000000000192&CRN=INR&CG=Y&USER_LANG_ID=001&UserType=1&AppType=retail" >Bank of Baroda</option>                                        
+                                        <option value="Bank of India|https://starconnectcbs.bankofindia.com/BankAwayRetail/sgonHttpHandler.aspx?Action.CBDT.ShoppingMall.Login.Init=Y" >Bank of India</option>                                        
+                                        <option value="Bank of Maharashtra|https://www.mahaconnect.in/servlet/ibs.servlets.IBSLoginServlet" >Bank of Maharashtra</option>                                        
+                                        <option value="Canara Bank|https://canepaydirecttax.canarabank.in/CANEPAYDIRECTTAX/DTEntry.aspx" >Canara Bank</option>                                        
+                                        <option value="Central Bank of India|https://www.centralbank.net.in/servlet/ibs.servlets.IBSLoginServlet" >Central Bank of India</option>                                        
+                                        <option value="Corporation Bank|https://corpnetbanking.com/corp/CorpBankAuthFebaController?merchant_code=DRTAX" >Corporation Bank</option>                                        
+                                        <option value="Dena Bank|https://denaiconnect.denabank.co.in/corp/DirectTaxController?Action.Shopping Mall.Login.Init=Y&BankId=018&AppType=corporate&USER_LANG_ID=001&UserType=1&M D=P&ITC=1987&PRN=87544578&CRN=INR&RU=https://tin.tin.nsdl.com/etax&MID=2345& CG=N" >Dena Bank</option>                                        
+                                        <option value="HDFC Bank|https://netbanking.hdfcbank.com/netbanking/HdfcNSDLRedirect.jsp" >HDFC Bank</option>                                        
+                                        <option value="ICICI Bank|https://gibtax.icicibank.com/corp/AuthenticationController?FORMSGROUP_ID__=AuthenticationFG&__START_TRAN_FLAG__=Y&FG_BUTTONS__=LOAD&ACTION.LOAD=Y&AuthenticationFG.LOGIN_FLAG=1&BANK_ID=ICI&JS_ENABLED_FLAG=Y&ITC=00000015&PRN=11&CRN=INR&IS_GIB_SESSION=Y&CATEGORY_ID=264&MD=P&PID=224&AppType=corporate&URLencoding=Y&CG=Y" >ICICI Bank</option>                                        
+                                        <option value="IDBI Bank|https://inet.idbibank.co.in/nsdl/nsdlpaymentnew.asp" >IDBI Bank</option>                                        
+                                        <option value="Indian Bank|https://www.indianbank.net.in/servlet/ibs.servlets.IBSLoginServlet?" >Indian Bank</option>                                        
+                                        <option value="Indian Overseas Bank|https://www.iobnet.co.in/ibanking/iobDTAXEntry.do" >Indian Overseas Bank</option>                                        
+                                        <option value="Jammu & Kashmir Bank|https://www.jkbankonline.com/corp/sgonHttpHandler.aspx?Action.JKBPaymentDirectTax.Login.Init=Y" >Jammu & Kashmir Bank</option>                                        
+                                        <option value="Oriental Bank of Commerce|https://www.obconline.co.in/BankAwayRetail/sgonHttpHandler.aspx?Action.OBCPaymentDirectTax.Login.Init=Y" >Oriental Bank of Commerce</option>                                        
+                                        <option value="Punjab and Sind Bank|https://www.psbonline.co.in/BankAwayRetail/sgonHttpHandler.aspx?Action.ShoppingMall.Login.Init=Y&BankId=023&MD=P&PID=000000000006&AMT=1&ITC=987&PRN=87544578&CRN=INR&RU=http://www.google.com&CG=N&USER_LANG_ID=001&UserType=1&AppType=retail" >Punjab and Sind Bank</option>                                        
+                                        <option value="Punjab National Bank|https://gateway.netpnb.com/newcbdt/Get_Parameters.aspx" >Punjab National Bank</option>                                        
+                                        <option value="State Bank of India|https://merchant.onlinesbi.com/merchant/merchantprelogin.htm?merchant_code=OLTAS" >State Bank of India</option>                                        
+                                        <option value="Syndicate Bank|https://www.syndonline.in/B001/nsdl" >Syndicate Bank</option>                                        
+                                        <option value="UCO Bank|https://www.ucoebanking.com/BankAwayRetail/sgonHttpHandler.aspx?Action.ShoppingMall.Login.Init=Y&BankId=028&AppType=retail&USER_LANG_ID=001&UserType=1&MD=P&PID=000000000066&ITC=987&PRN=87544578&CRN=INR&RU=https://onlineservices.tin.nsdl.com/etaxnew/tdsnontds.jsp&CG=N" >UCO Bank</option>                                        
+                                        <option value="Union Bank of India|https://www.unionbankonline.co.in/corp/BANKAWAY?Action.ShoppingMall.Login.Init=Y&AppType=corporate&BankId=026&USER_LANG_ID=001&UserType=1&MD=P&PID=000000000024&ITC=987&PRN=87544578&CRN=INR&RU=https://tin.tin.nsdl.com/etax&MID=2345&CG=N" >Union Bank of India</option>                                        
+                                        <option value="United Bank of India|https://ebank.unitedbankofindia.com/BankAwayRetail/sgonHttpHandler.aspx?Action.ShoppingMall.Login.Init=Y&BankId=027&MD=P&PID=000000000004&AMT=1&ITC=DIRECTTAX&PRN=DIRECTTAX&CRN=INR&RU=https://onlineservices.tin.nsdl.com/etaxnew/tdsnontds.jsp&CG=N&USER_LANG_ID=001&UserType=1&AppType=retail" >United Bank of India</option>                                        
+                                        <option value="Vijaya Bank|https://www.vijayabankonline.in/NASApp/BANA623WAR/BANKAWAY?Action.DTax.Redirect.Selection=Y&BankId=029&AppType=corporate&USER_LANG_ID=001&UserType=1&MD=P&ITC=1987&PRN=87544578&CRN=INR&RU=https://tin.tin.nsdl.com/etax&MID=2345&CG=N" >Vijaya Bank</option>                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row d-flex align-items-baseline">
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio3" id="debitCardRadio" value="option1" onclick="enable2()">
+                                        <label class="form-check-label" for="radio3">
+                                            Debit Card
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <select name="debitBankName"  size="1" id="DebitBank_Name_c" class="form-control" disabled>
+                                        <option value=""  selected> Bank Name</option>
+                                        <option value="Canara Bank|https://canepaydirecttax.canarabank.in/CANEPAYDIRECTTAX/DTEntry.aspx" >Canara Bank</option>
+                                        <option value="HDFC Bank|https://www.tpsl-india.in/NSDLCBDT/TxnrequestCBDT.jsp" >HDFC Bank</option>
+                                        <option value="ICICI Bank|https://gibtax.icicibank.com/corp/AuthenticationController?FORMSGROUP_ID__=AuthenticationFG&amp;__START_TRAN_FLAG__=Y&amp;FG_BUTTONS__=LOAD&amp;ACTION.LOAD=Y&amp;AuthenticationFG.LOGIN_FLAG=1&amp;BANK_ID=ICI&amp;JS_ENABLED_FLAG=Y&amp;ITC=00000015&amp;PRN=11&amp;CRN=INR&amp;IS_GIB_SESSION=Y&amp;CATEGORY_ID=264&amp;MD=P&amp;PID=224&amp;AppType=corporate&amp;URLencoding=Y&amp;CG=Y" >ICICI Bank</option>
+                                        <option value="Indian Bank|https://www.indianbank.net.in/servlet/ibs.servlets.IBSLoginServlet?" >Indian Bank</option>
+                                        <option value="Punjab National Bank|https://gateway.netpnb.com/newcbdt/Get_Parameters.aspx" >Punjab National Bank</option>
+                                        <option value="State Bank of India|https://merchant.onlinesbi.com/merchant/merchantprelogin.htm?merchant_code=OLTAS" >State Bank of India</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p id="netBankNameError" class="error"></p>
+                        </div>
+                    </div>
+                    <div class="row p-4 mb-3 dataFields">
+                        <div class="col">
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right">
+                                    <label for="" class="form-label" id="Tdan">
+                                        Tax Deduction Account No<span style="color: #E55957;">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                    <input class="form-control" type="text" name="tdan" value="">
+                                    <p id="tdanError" class="error"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 text-md-right">
+                                    <label for="" class="form-label" id="AssessmentYear">
+                                        Assessment Year<span style="color: #E55957;">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                    <select name="assessmentYear"  class="form-control">
+                                        <option value = "" selected>Assessment Year</option>                                            
+                                        <option >2020-21</option>                                
+                                        <option >2019-20</option>                                
+                                        <option >2018-19</option>                                
+                                        <option >2017-18</option>                                
+                                        <option >2016-17</option>                                
+                                        <option >2015-16</option>                                
+                                        <option >2014-15</option>                                
+                                        <option >2013-14</option>                                
+                                        <option >2012-13</option>                                
+                                        <option >2011-12</option>                                
+                                        <option >2010-11</option>                                
+                                        <option >2009-10</option>                                
+                                        <option >2008-09</option>                                
+                                        <option >2007-08</option>                                
+                                        <option >2006-07</option>                                
+                                        <option >2005-06</option>                                
+                                        <option >2004-05</option>                                
+                                        <option >2003-04</option>                                
+                                        <option >2002-03</option>                                
+                                        <option >2001-02</option>                                
+                                        <option >2000-01</option>                                
+                                        <option >1999-00</option>                                
+                                        <option >1998-99</option>                                
+                                        <option >1997-98</option>                                
+                                        <option >1996-97</option>                                
+                                        <option >1995-96</option>                                
+                                        <option >1994-95</option>                                
+                                        <option >1993-94</option>                                
+                                        <option >1992-93</option>                                
+                                        <option >1991-92</option>                                
+                                        <option >1990-91</option>                                
+                                        <option >1989-90</option>                                
+                                        <option >1988-89</option>                                
+                                        <option >1987-88</option>                                
+                                        <option >1986-87</option>                                
+                                        <option >1985-86</option>                                
+                                        <option >1984-85</option>                                
+                                        <option >1983-84</option>                                
+                                        <option >1982-83</option>                                
+                                        <option >1981-82</option>                                
+                                        <option >1980-81</option>                                
+                                        <option >1979-80</option>                                
+                                        <option >1978-79</option>                                
+                                        <option >1977-78</option>                                
+                                        <option >1976-77</option>                                
+                                        <option >1975-76</option>                                
+                                        <option >1974-75</option>                                
+                                        <option >1973-74</option>                                
+                                        <option >1972-73</option>                                
+                                        <option >1971-72</option>                                
+                                        <option >1970-71</option>                                
+                                        <option >1969-70</option>                                
+                                        <option >1968-69</option>                                
+                                        <option >1967-68</option>                                
+                                        <option >1966-67</option>                                
+                                        <option >1965-66</option>                                
+                                        <option >1964-65</option>                                
+                                        <option >1963-64</option>                                
+                                        <option >1962-63</option>                                
+                                        <option >1961-62</option>                                    </select>
+                                    <p id="assessmentYearError" class="error"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-4 mb-3 dataFields">
+                        <div class="col">
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right">
+                                    <label for="" class="form-label">
+                                        Flat/Door/Block No.
+                                    </label>
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                    <input class="form-control form-control-md" type="text" name="" id="" value="">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right">
+                                    <label for="" class="form-label">
+                                        Premises/Building/Village
+                                    </label>
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                    <input class="form-control form-control-md" type="text" name="" id="" value="">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right">
+                                    <label for="" class="form-label">
+                                        Road/Street/Lane
+                                    </label>
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                    <input class="form-control" type="text" name="" id="" value="">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right">
+                                    <label for="" class="form-label">
+                                        Area/Locality
+                                    </label>
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                    <input class="form-control" type="text" name="" id="" value="">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right">
+                                    <label for="" class="form-label" id="City">
+                                        City/District<span style="color: #E55957;">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                    <input class="form-control" type="text" name="city" id="" value="">
+                                    <p id="cityError" class="error"></p>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right">
+                                    <label for="" class="form-label" id="AddState">
+                                        State<span style="color: #E55957;">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                    <select name="addState"  onChange="selectState();" class="form-control">	
+                                        <option value="">State</option>
+                                        <option >ANDHRA PRADESH</option>
+                                        <option >ANDM & NICOBAR</option>
+                                        <option >ARUNACHAL PRAD</option>
+                                        <option >ASSAM</option>
+                                        <option >BIHAR</option>
+                                        <option >CHANDIGARH</option>
+                                        <option >CHATTISHGARH</option>
+                                        <option >DADRA & NAGAR HAVELI</option>
+                                        <option >DELHI</option>
+                                        <option >DIU & DAMAN</option>
+                                        <option >GOA</option>
+                                        <option >GUJARAT</option>
+                                        <option >HARYANA</option>
+                                        <option >HIMACHAL PRADESH</option>
+                                        <option >JAMMU & KASHMIR</option>
+                                        <option >JHARKHAND</option>
+                                        <option >KARNATAKA</option>
+                                        <option >KERALA</option>
+                                        <option >LAKSHWADEEP</option>
+                                        <option >MADHYA PRADESH</option>
+                                        <option >MAHARASHTRA</option>
+                                        <option >MANIPUR</option>
+                                        <option >MEGHALYA</option>
+                                        <option >MIZORAM</option>
+                                        <option >NAGALAND</option>
+                                        <option >ORISSA</option>
+                                        <option >PONDICHERRY</option>
+                                        <option >PUNJAB</option>
+                                        <option >RAJASTHAN</option>
+                                        <option >SIKKIM</option>
+                                        <option >TAMILNADU</option>
+                                        <option >TELANGANA</option>
+                                        <option >TRIPURA</option>
+                                        <option >UTTAR PRADESH</option>
+                                        <option >UTTARAKHAND</option>
+                                        <option >WEST BENGAL</option>
+                                    </select>
+                                    <p id="addStateError" class="error"></p>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right">
+                                    <label for="" class="form-label" id="Pincode">
+                                        Pin Code<span style="color: #E55957;">*</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                    <input class="form-control" type="number" name="pincode" id="" value="">
+                                    <p id="pincodeError" class="error"></p>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right">
+                                    <label for="" class="form-label">
+                                        Email ID
+                                    </label>
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                    <input class="form-control" type="text" name="" id="" value="">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-md-4 text-md-right">
+                                    <label for="" class="form-label">
+                                        Mobile No.
+                                    </label>
+                                </div>
+                                <div class="col-md-8 d-flex flex-column">
+                                    <input class="form-control" type="number" size="10" name="" id="" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-4 mb-3 dataFields">
+                        <div class="col-md-4 text-md-right">
+                            <label for="captchacode" class="form-label" id="Captchacode">
+                                Captcha Code<span style="color: #E55957;">*</span>
+                            </label>
+                        </div>
+                        <div class="col-md-8 d-flex flex-column">
+                            <canvas id="myCanvas" style="border:1px solid #000000;">
+                            </canvas>
+                            <input class="form-control mt-2" type="text" name="captchacode" value="">
+                            <p id="captchacodeError" class="error"></p>
+                        </div>
+                    </div>
+                    <div class="row p-4 mb-3 dataFields">
+                        <div class="col d-flex flex-column flex-sm-row justify-content-center">
+                            <button class="btn btn-outline-secondary text-dark my-2">Clear</button>
+                            <button class="btn btn-warning my-2 m-sm-2" type="submit">Proceed</button>
+                            <button class="btn btn-outline-secondary text-dark my-2">Back</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div id="accordian">
+                    <div class="card">
+                        <div class="card-header" id="heading">
+                            <h6 class="mb-0">
+                                SPECIAL INSTRUCTIONS
+                                <a href="#collapseOne" data-toggle="collapse" data-parent="#accordian"><i class="fa fa-angle-down"></i></a>
+                            </h6>
+                        </div>
+                        <div id="collapseOne" class="collapse">
+                            <div class="card-body">
+                                <ul>
+                                    <li>Name as per Income Tax Department database (Masked) will be displayed on the confirmation screen</li>
+                                    <li>Field marked with * are mandatory</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../bootstrap/jquery.js"></script>
+    <script src="../bootstrap/bootstrap.js"></script>
+    
+</body>
+</html>

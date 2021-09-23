@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../font-awesome/css/all.css    ">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body onload="date()">
+
+    <nav class="navbar navbar-expand bg-light navbar-light">
+        <a class="navbar-brand"><img src="img/sbilogo.png" height="100px" width="100px" alt="" class="img-fluid"></a>
+    </nav>
+
+    <section class="py-2 bg-primary"></section>
+
+    <section id="date" class="text-right pr-5 py-3 bg-lightblue"></section>
+
+    <section class="bg-lightblue py-1">
+        <div class="container">
+            <div class="card">
+                <div class="card-header py-1 m-0">
+                    <h6 class="card-title m-0">OLTAS</h6>
+                </div>
+                <div class="card-body">
+                    <form action="../government5/challan.html?">
+                        <label for="" class="form-label pb-3 font-weight-bold">Select a payment option</label>
+                        <div class="form-check pb-3">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="radio" checked>Internet Banking
+                            </label>
+                        </div>
+                        <div class="form-check pb-3">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="radio">ATM cum Debits Cards of SBI
+                            </label>
+                        </div>
+                        <div class="form-group m-0 d-flex justify-content-center">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="note" class="container my-3">
+            <div class="row">
+                <div class="col-md-2">
+                    <i class="fa fa-pencil"></i>
+                </div>
+                <div class="col-md-10">
+                    <div class="row pt-2">
+                        <div class="col-md">
+                            <i class="fa fa-angle-right"></i><span> You can make an online payment using your State Bank Group Internet baking accounts.</span>
+                        </div>
+                    </div>
+                    <div class="row pb-2">
+                        <div class="col-md">
+                            <i class="fa fa-angle-right"></i><span> If you select the card payment option, you can pay using your State Bank of India Debit Card.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="footer text-white d-flex">
+            <p class="ml-2 m-0">&copy; Copyright SBI</p>
+            <ul class="d-flex ml-auto mr-2 m-0">
+                <li>Privacy Statement |</li>
+                <li>Disclosure |</li>
+                <li>Password management |</li>
+                <li>Security Tips |</li>
+                <li>Terms of Use </li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="../bootstrap/jquery.js"></script>
+    <script src="../bootstrap/bootstrap.js"></script>
+</body>
+</html>
